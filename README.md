@@ -41,11 +41,15 @@ php artisan serv
 
 
   api/articles/list - список статей
+
   api/articles/search - поиск и сортировка разрезе статей. Параметры: field - поле в которм ищем, value - что ищем, sort - по какому полю сортруем
+
   api/articles/{id} - отобразить статью с заданным id
 
   api/tags/list - список тегов
+
   api/tags/search - поиск и сортировка в разрезе тегов. Параметры: field - поле в которм ищем, value - что ищем, sort - по какому полю сортруем 
+  
   api/tags/{id} - отобразить тег с заданным id
 
 
