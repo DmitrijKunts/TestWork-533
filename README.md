@@ -1,6 +1,10 @@
+# Стек
+PHP 8.1+
+
+Laravel 8+
+
 # Рзвертывание
 
-PHP 8.1
 
 git clone https://github.com/DmitrijKunts/TestWork-533.git
 
