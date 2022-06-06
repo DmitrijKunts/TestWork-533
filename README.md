@@ -12,6 +12,8 @@ cp .env.example .env
 
 В .env указываем свой ключ для авторизации API_KEY
 
+php artisan key:generate
+
 php artisan test
 
 php artisan serv
