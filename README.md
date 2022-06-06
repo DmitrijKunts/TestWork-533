@@ -33,6 +33,8 @@ php artisan serv
 
 ## API
 
+Аутентификация через bearer-токен
+
   GET|HEAD   api/articles/list .................................. articles.list › Api\ArticleController@index
 
   GET|HEAD   api/articles/search ............................. articles.search › Api\ArticleController@search
