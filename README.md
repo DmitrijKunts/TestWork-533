@@ -10,9 +10,11 @@ composer install
 
 cp .env.example .env
 
-В .env указываем свой ключ для авторизации API_KEY
+В .env указываем свой ключ для авторизации API_KEY и настроить подключение к БД.
 
 php artisan key:generate
+
+php artisan migrate --seed
 
 php artisan test
 
@@ -20,7 +22,7 @@ php artisan serv
 
 Сервер должен запустится по адресу http://127.0.0.1:8000 для просмотра коллекции в Postman: "TestWork 533.postman_collection.json" - файл в репозитарии
 
-#№ Предметная область 
+## Предметная область 
 
 Статьи с тегами с атрибутом приоритет
 
@@ -49,7 +51,7 @@ php artisan serv
   api/tags/list - список тегов
 
   api/tags/search - поиск и сортировка в разрезе тегов. Параметры: field - поле в которм ищем, value - что ищем, sort - по какому полю сортруем 
-  
+
   api/tags/{id} - отобразить тег с заданным id
 
 
