@@ -2,20 +2,20 @@
 
 namespace App\Repositories;
 
+use App\Http\Resources\ArticleResource;
 use App\Models\Article;
 use App\Repositories\Interfaces\ArticleRepositoryInterface;
-use Illuminate\Support\Facades\DB;
 
 class ArticleRepository implements ArticleRepositoryInterface
 {
     public function all()
     {
-        return Article::with('tags')->get();
+        return ArticleResource::collection(Article::with('tags')->get());
     }
 
     public function getById($id)
     {
-        return Article::with('tags')->findOrFail($id);
+        return new ArticleResource(Article::with('tags')->findOrFail($id));
     }
 
     public function search($field, $value, $sort = null)
@@ -57,6 +57,6 @@ class ArticleRepository implements ArticleRepositoryInterface
             $articles = $articles->orderBy($sort);
         }
 
-        return $articles->get();
+        return ArticleResource::collection($articles->get());
     }
 }

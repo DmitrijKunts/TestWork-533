@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Http\Resources\ArticleTagResource;
 use App\Models\ArticleTag;
 use App\Repositories\Interfaces\ArticleTagRepositoryInterface;
 
@@ -9,12 +10,12 @@ class ArticleTagRepository implements ArticleTagRepositoryInterface
 {
     public function all()
     {
-        return ArticleTag::with('articles')->get();
+        return ArticleTagResource::collection(ArticleTag::with('articles')->get());
     }
 
     public function getById($id)
     {
-        return ArticleTag::with('articles')->findOrFail($id);
+        return new ArticleTagResource(ArticleTag::with('articles')->findOrFail($id));
     }
 
     public function search($field, $value, $sort = null)
@@ -56,6 +57,6 @@ class ArticleTagRepository implements ArticleTagRepositoryInterface
             $tags = $tags->orderBy($sort);
         }
 
-        return $tags->get();
+        return ArticleTagResource::collection($tags->get());
     }
 }

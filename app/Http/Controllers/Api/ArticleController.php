@@ -24,21 +24,19 @@ class ArticleController extends Controller
 
     public function index()
     {
-        return $this->respone(ArticleResource::collection($this->articleRepository->all()));
+        return $this->respone($this->articleRepository->all());
     }
 
     public function getById($id)
     {
-        return $this->respone(new ArticleResource($this->articleRepository->getById($id)));
+        return $this->respone($this->articleRepository->getById($id));
     }
 
     public function search(SearchRequest $request)
     {
         return $this->respone(
-            ArticleResource::collection(
-                $this->articleRepository
-                    ->search($request->field, $request->value, $request->sort ?? null)
-            )
+            $this->articleRepository
+                ->search($request->field, $request->value, $request->sort ?? null)
         );
     }
 }
