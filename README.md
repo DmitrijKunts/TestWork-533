@@ -3,7 +3,7 @@ PHP 8.1+
 
 Laravel 9+
 
-# Рзвертывание
+# Развертывание
 
 
 git clone https://github.com/DmitrijKunts/TestWork-533.git
